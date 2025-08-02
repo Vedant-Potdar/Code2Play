@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Code2Play – C Code Visualizer</title>
+  <style>
+    body {
+      background: #f0f2f5;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+      font-family: monospace;
+      font-size: 14px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      background: #fff;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #output {
+      margin-top: 30px;
+      padding: 20px;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      min-height: 100px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 Code2Play – C Code Visualizer</h1>
+
+  <label for="codeInput"><strong>Paste your C code here:</strong></label>
+  <textarea id="codeInput" placeholder="// Example: Write a program for Fibonacci series"></textarea>
+
+  <button onclick="visualizeCode()">🔍 Visualize</button>
+
+  <div id="output">Visual output will appear here...</div>
+
+  <script>
+    function visualizeCode() {
+      const code = document.getElementById("codeInput").value;
+      
+      // TEMP MOCK OUTPUT - later connect to visualizations
+      let outputArea = document.getElementById("output");
+
+      if (code.includes("fibonacci") || code.includes("Fibonacci")) {
+        outputArea.innerHTML = "🌀 Visualizing Fibonacci sequence...";
+        // TODO: Replace with canvas animation or SVG logic
+      } else if (code.includes("main")) {
+        outputArea.innerHTML = "✅ C code detected. Visualization under construction.";
+      } else {
+        outputArea.innerHTML = "⚠️ Please enter valid C code.";
+      }
+    }
+  </script>
+
+</body>
+</html>
